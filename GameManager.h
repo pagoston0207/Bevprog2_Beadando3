@@ -24,6 +24,7 @@ public:
     void Start();
     bool CanPlace(Vector2 cellPos);
     void Place(Vector2 cellPos);
+    FieldState GetState(Vector2 cellPos);
     Vector2 GetSize();
 
 };

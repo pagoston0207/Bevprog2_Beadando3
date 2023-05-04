@@ -17,8 +17,8 @@ int main()
 
 
     Project p= Project(Scene(Layer()));
-    GameManagerController GMC(Vector2(10,10),Vector2(600,600),[](GameManager* sender){gout<<move_to(100,100)<<color(230,20,10)<<box(200,200);});
-    GMC.MoveTo(Vector2(200,200));
+    GameManagerController GMC(Vector2(10,10),Vector2(1000,1000),[](GameManager* sender){gout<<move_to(100,100)<<color(230,20,10)<<box(200,200);},"X.bmp.kep","O.bmp.kep");
+    //GMC.MoveTo(Vector2(200,200));
     p.Add(&GMC);
 
     p.Update();

@@ -69,3 +69,7 @@ Vector2 GameManager::GetSize()
 {
     return Vector2(_map.size(),_map.size()>0?_map[0].size():0);
 }
+FieldState GameManager::GetState(Vector2 cellPos)
+{
+    return _map[cellPos.x][cellPos.y].State;
+}

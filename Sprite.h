@@ -12,6 +12,7 @@ protected:
     virtual void InitializeSprite();
 public:
     Sprite(Vector2 _size=Vector2(10,10), Widget* _parent=0,string _graphicFileName="");
+    void SetGraphic(string path);
     virtual void Print()override;
 };
 

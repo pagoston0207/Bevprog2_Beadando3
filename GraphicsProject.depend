@@ -31,7 +31,7 @@
 	"Sprite.h"
 	"Color.h"
 
-1682595625 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\sprite.h
+1683193564 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\sprite.h
 	"graphics.hpp"
 	"Widget.h"
 
@@ -435,10 +435,10 @@
 
 1677893378 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\graphicslib\keytbl.h
 
-1682594086 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\imagebutton.cpp
+1683193564 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\imagebutton.cpp
 	"ImageButton.h"
 
-1683139820 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\imagebutton.h
+1683193564 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\imagebutton.h
 	"Sprite.h"
 	"functional"
 
@@ -451,7 +451,7 @@
 	<vector>
 	"Widget.h"
 
-1683140129 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\main.cpp
+1683196650 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\main.cpp
 	"graphics.hpp"
 	"iostream"
 	"TextButton.h"
@@ -491,7 +491,7 @@
 	"SelectingWidget.h"
 	<iostream>
 
-1683140542 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\sprite.cpp
+1683196550 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\sprite.cpp
 	"Sprite.h"
 	"graphics.hpp"
 	<iostream>
@@ -513,22 +513,22 @@
 	"Widget.h"
 	<iostream>
 
-1683139240 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.cpp
+1683193248 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.cpp
 	"GameManager.h"
 	"iostream"
 
-1683136327 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.h
+1683192963 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.h
 	"Field.h"
 	"vector"
 	"functional"
 	"Player.h"
 	"Vector2.h"
 
-1683140007 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.cpp
+1683196336 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.cpp
 	"GameManagerController.h"
 	"iostream"
 
-1683136297 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.h
+1683193731 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.h
 	"ImageButton.h"
 	"GameManager.h"
 	"functional"

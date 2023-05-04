@@ -10,6 +10,8 @@ class GameManagerController: public Widget
 protected:
     GameManager _gameManager;
     vector<vector<ImageButton>> _buttons;
+    string _xGraphicPath;
+    string _oGraphicPath;
 public:
     GameManagerController(Vector2 mapSize, Vector2 screenSize,std::function <void(GameManager* sender)> endOfGameCallback, string xGraphicPath="",string oGraphicPath="");
     virtual void Print()override;
