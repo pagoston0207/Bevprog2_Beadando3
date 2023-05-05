@@ -22,16 +22,20 @@ GameManager::GameManager(std::function<void(GameManager* sender)> endOfGameCallb
     _player1.Id=1;
     _player2.Id=2;
     _currentPlayer = 0;
+    goalAdjacentNumber =3;
 }
 bool GameManager::CanPlace(Vector2 cellPos)
 {
     return _map[cellPos.x][cellPos.y].State==Empty;
 }
+Vector2 GameManager::GetSize()
+{
+    return Vector2(_map.size(),_map.size()>0?_map[0].size():0);
+}
 void GameManager::Place(Vector2 cellPos)
 {
     if(_currentPlayer)
     {
-        cout<<cellPos.x<<" "<<cellPos.y<<endl;
         if(_currentPlayer->Id==Player1)
         {
             _map[cellPos.x][cellPos.y].State= Player1;
@@ -40,7 +44,14 @@ void GameManager::Place(Vector2 cellPos)
         {
             _map[cellPos.x][cellPos.y].State= Player2;
         }
-        NextTurn();
+        if(IsEndOfGame())
+        {
+            _endOfGameCallback(this);
+        }
+        else
+        {
+            NextTurn();
+        }
     }
 
 }
@@ -59,17 +70,57 @@ void GameManager::NextTurn()
 
         }
     }
-    cout<<"Next Turn"<<endl;
 }
 void GameManager::Start()
 {
     _currentPlayer = &_player1;
 }
-Vector2 GameManager::GetSize()
-{
-    return Vector2(_map.size(),_map.size()>0?_map[0].size():0);
-}
 FieldState GameManager::GetState(Vector2 cellPos)
 {
     return _map[cellPos.x][cellPos.y].State;
+}
+bool GameManager::IsEndOfGame()
+{
+    for(int i = 0; i<_map.size(); i++)
+    {
+        for ( int j = 0 ; j < _map[0].size();j++)
+        {
+            int countA = 0;
+            int countB = 0;
+            int countC = 0;
+            int countD = 0;
+            for(int k = 0;k<=goalAdjacentNumber-1;k++)
+            {
+                if(_currentPlayer)
+                {
+                    if(_map[i+k<_map.size()?i+k:_map.size()-1][j].State == _currentPlayer->Id)
+                    {
+                        countA ++;
+                    }
+                    if(countA== goalAdjacentNumber)
+                        return true;
+                    if(_map[i][j+k<_map[0].size()?j+k:_map[0].size()-1].State == _currentPlayer->Id)
+                    {
+                        countB ++;
+                    }
+                    if(countB== goalAdjacentNumber)
+                        return true;
+                    if(_map[i+k<_map.size()?i+k:_map.size()-1][j+k<_map[0].size()?j+k:_map[0].size()-1].State == _currentPlayer->Id)
+                    {
+                        countC ++;
+                    }
+                    if(countC== goalAdjacentNumber)
+                        return true;
+                    if(_map[i<k?0:i-k][j+k<_map[0].size()?j+k:_map[0].size()-1].State == _currentPlayer->Id)
+                    {
+                        countD ++;
+                    }
+                    if(countD== goalAdjacentNumber)
+                        return true;
+                }
+
+            }
+        }
+    }
+    return false;
 }

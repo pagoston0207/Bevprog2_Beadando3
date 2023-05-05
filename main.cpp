@@ -10,30 +10,44 @@
 #include "GameManagerController.h"
 using namespace genv;
 using namespace std;
+const int XX=1000;
+const int YY=1000;
 int main()
 {
-    gout.open(1000,1000);
+    gout.open(XX,YY);
     event ev;
 
 
+    bool gameOver=false;
     Project p= Project(Scene(Layer()));
-    GameManagerController GMC(Vector2(10,10),Vector2(1000,1000),[](GameManager* sender){gout<<move_to(100,100)<<color(230,20,10)<<box(200,200);},"X.bmp.kep","O.bmp.kep");
-    //GMC.MoveTo(Vector2(200,200));
-    p.Add(&GMC);
-
+    GameManagerController* GMC = new GameManagerController(Vector2(10,10),Vector2(1000,1000),[XX,YY, &gameOver,&p](GameManager* sender){gameOver = true;p.Update();gout<<move_to(XX/2,YY/2)<<color(0,0,0)<<text("GameOver");gout<<refresh;},"X.bmp.kep","O.bmp.kep");
+    p.Add(GMC);
     p.Update();
     gin.timer(35);
     gout<<refresh;
     while(gin >> ev&& ev.keycode!= key_escape)
     {
-        p.Handle(ev);
-        if(ev.type==ev_timer)
+        if(!gameOver)
         {
-            gout<<move_to(0,0)<<color(0,0,0)<<box(800,600);
-            p.Update();
-            gout<<refresh;
 
+
+            p.Handle(ev);
+            if(ev.type==ev_timer)
+            {
+                gout<<move_to(0,0)<<color(0,0,0)<<box(900,900);
+                p.Update();
+                gout<<refresh;
+            }
         }
+        else if(ev.button==btn_left)
+        {
+            delete GMC;
+            GMC=  new GameManagerController(Vector2(10,10),Vector2(1000,1000),[XX,YY, &gameOver,&p](GameManager* sender){gameOver = true;p.Update();gout<<move_to(XX/2,YY/2)<<color(0,0,0)<<text("GameOver");gout<<refresh;},"X.bmp.kep","O.bmp.kep");
+            p.Add(GMC);
+            p.Update();
+            gameOver = false;
+        }
+
     }
     return 0;
 }

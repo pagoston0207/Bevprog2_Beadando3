@@ -62,7 +62,6 @@ void Sprite::InitializeSprite()
                             {
                                 for(int l=0;l<c;l++)
                                 {
-                                    //cout<<r<<" "<<g<<" "<<b<<" "<<endl;
                                     _canvas<<move_to(j*c+k,i*c+l)<<color(r,g,b)<<dot;
                                 }
 

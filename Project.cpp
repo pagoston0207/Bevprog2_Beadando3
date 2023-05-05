@@ -25,3 +25,9 @@ void Project::Handle(event ev)
     if(currentScene)
     currentScene->Handle(ev);
 }
+void Project::ClearScene()
+{
+    scenes.clear();
+    scenes.push_back(Scene(Layer()));
+    currentScene = &scenes[0];
+}

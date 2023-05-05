@@ -14,6 +14,7 @@ protected:
     Player _player1;
     Player _player2;
     Player* _currentPlayer;
+    int goalAdjacentNumber;
     std::function <void (GameManager* sender)> _endOfGameCallback;
     void NextTurn();
     bool IsEndOfGame();

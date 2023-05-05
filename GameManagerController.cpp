@@ -5,13 +5,20 @@ using std::endl;
 GameManagerController ::GameManagerController( Vector2 mapSize,Vector2 screenSize, std::function<void(GameManager* sender)> endOfGameCallback, string xGraphicPath, string oGraphicPath): _xGraphicPath(xGraphicPath), _oGraphicPath(oGraphicPath)
 {
     _gameManager = GameManager(endOfGameCallback,mapSize);
-    for(int i =0; i < _gameManager.GetSize().x; i++)
+    for(int i =0; i < mapSize.x; i++)
     {
         vector<ImageButton> v;
-        for (int j = 0; j< _gameManager.GetSize().y; j++)
+        for (int j = 0; j< mapSize.y; j++)
         {
-            ImageButton ib([this,i,j](ImageButton* sender){if(_gameManager.CanPlace(Vector2(i,j))){_gameManager.Place(Vector2(i,j));}}, screenSize/_gameManager.GetSize(),this);
-            ib.MoveTo(Vector2((screenSize/_gameManager.GetSize()).x*(i+0.5f),(screenSize/_gameManager.GetSize()).y*(j+0.5f)));
+            ImageButton ib([&,this,i,j](ImageButton* sender)
+            {
+                if(_gameManager.CanPlace(Vector2(i,j)))
+                {
+                    _gameManager.Place(Vector2(i,j));
+                }
+            }, screenSize/mapSize,this);
+
+            ib.MoveTo(Vector2((screenSize/mapSize).x*(i+0.5f),(screenSize/mapSize).y*(j+0.5f)));
             v.push_back(ib);
         }
         _buttons.push_back(v);
@@ -42,4 +49,8 @@ void GameManagerController::Print()
         }
     }
     Widget::Print();
+}
+void GameManagerController::Handle(event ev)
+{
+    Widget::Handle(ev);
 }

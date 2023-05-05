@@ -16,6 +16,7 @@ public:
     void Add( Widget* _widget);
     void Update();
     void Handle(event ev);
+    void ClearScene();
 };
 
 #endif // PROJECT_H_INCLUDED
