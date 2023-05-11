@@ -13,13 +13,13 @@ protected:
     vector<vector<Field>> _map;
     Player _player1;
     Player _player2;
-    Player* _currentPlayer;
     int goalAdjacentNumber;
     std::function <void (GameManager* sender)> _endOfGameCallback;
     void NextTurn();
     bool IsEndOfGame();
 
 public:
+    Player* currentPlayer;
     GameManager();
     GameManager(std::function<void (GameManager* sender)> endOfGameCallback, Vector2 mapSize= Vector2 (5,5));
     void Start();

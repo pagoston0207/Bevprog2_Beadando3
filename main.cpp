@@ -25,17 +25,22 @@ int main()
 
     GameManagerController* GMC;
 
-    TextButton restartButton([&restartButton,&GMC, &p,&gameOver](TextButton* sender)
+    FilledText winnerText("The winner is: lol",Vector2(300,100));
+    winnerText.MoveTo(Vector2(XX/2,350));
+    winnerText.SetActive(false);
+    p.Add(&winnerText);
+
+    TextButton restartButton([&restartButton,&GMC, &p,&gameOver,&winnerText](TextButton* sender)
         {
             delete GMC;
-            GMC=  new GameManagerController(Vector2(10,10),Vector2(1000,1000),[XX,YY, &gameOver,&p,&restartButton, &GMC](GameManager* sender){gameOver = true;restartButton.SetActive(true);GMC->SetActive(false);p.Update();gout<<refresh;},"X.bmp.kep","O.bmp.kep");
+            GMC=  new GameManagerController(Vector2(10,10),Vector2(1000,1000),[XX,YY, &gameOver,&p,&restartButton, &GMC,&winnerText](GameManager* sender){gameOver = true;restartButton.SetActive(true);winnerText.SetActive(true);winnerText.SetText("The winner is:"+GMC->GetCurrentPlayerSymbol());GMC->SetActive(false);p.Update();gout<<refresh;},"X.bmp.kep","O.bmp.kep");
             restartButton.SetActive(false);
             p.Update();
             gameOver = false;
         },"Restart", Vector2(200,75));
     restartButton.SetActive(false);
     restartButton.MoveTo(Vector2(XX/2,YY/2));
-     GMC = new GameManagerController(Vector2(5,5),Vector2(1000,1000),[XX,YY, &gameOver,&p,&restartButton, &GMC](GameManager* sender){gameOver = true;restartButton.SetActive(true);GMC->SetActive(false);p.Update();gout<<refresh;},"X.bmp.kep","O.bmp.kep");
+     GMC = new GameManagerController(Vector2(5,5),Vector2(1000,1000),[XX,YY, &gameOver,&p,&restartButton, &GMC,&winnerText](GameManager* sender){gameOver = true;restartButton.SetActive(true);winnerText.SetActive(true);winnerText.SetText("The winner is:"+GMC->GetCurrentPlayerSymbol());GMC->SetActive(false);p.Update();gout<<refresh;},"X.bmp.kep","O.bmp.kep");
     p.Add(GMC);
     p.Add(&restartButton);
     p.LoadScene(0);

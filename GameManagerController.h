@@ -16,5 +16,6 @@ public:
     GameManagerController(Vector2 mapSize, Vector2 screenSize,std::function <void(GameManager* sender)> endOfGameCallback, string xGraphicPath="",string oGraphicPath="");
     virtual void Print()override;
     virtual void Handle(event ev)override;
+    string GetCurrentPlayerSymbol();
 };
 #endif // PLAYER_H_INCLUDED

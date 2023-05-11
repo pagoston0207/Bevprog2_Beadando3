@@ -54,3 +54,17 @@ void GameManagerController::Handle(event ev)
 {
     Widget::Handle(ev);
 }
+string GameManagerController::GetCurrentPlayerSymbol()
+{
+    if(_gameManager.currentPlayer)
+    {
+        if(_gameManager.currentPlayer->Id ==1)
+        {
+            return "X";
+        }
+        if(_gameManager.currentPlayer->Id ==2)
+        {
+            return "O";
+        }
+    }
+}
