@@ -7,6 +7,7 @@ GameManager::GameManager()
     _currentPlayer =0;
     _player1.Id=1;
     _player2.Id=2;
+    goalAdjacentNumber =3;
 }
 GameManager::GameManager(std::function<void(GameManager* sender)> endOfGameCallback, Vector2 mapSize):_endOfGameCallback(endOfGameCallback)
 {
@@ -89,34 +90,38 @@ bool GameManager::IsEndOfGame()
             int countB = 0;
             int countC = 0;
             int countD = 0;
-            for(int k = 0;k<=goalAdjacentNumber-1;k++)
+            for(int k = 0;k<goalAdjacentNumber;k++)
             {
                 if(_currentPlayer)
                 {
-                    if(_map[i+k<_map.size()?i+k:_map.size()-1][j].State == _currentPlayer->Id)
+                    if(i+k<_map.size()&&j+k<_map[0].size())
                     {
-                        countA ++;
+                        if(_map[i+k][j+k].State== _currentPlayer->Id)
+                            countB++;
+                        if(countB>= goalAdjacentNumber)
+                            return true;
                     }
-                    if(countA== goalAdjacentNumber)
-                        return true;
-                    if(_map[i][j+k<_map[0].size()?j+k:_map[0].size()-1].State == _currentPlayer->Id)
+                    if(j+k<_map[0].size())
                     {
-                        countB ++;
+                        if(_map[i][j+k].State== _currentPlayer->Id)
+                            countD++;
+                        if(countD>= goalAdjacentNumber)
+                            return true;
                     }
-                    if(countB== goalAdjacentNumber)
-                        return true;
-                    if(_map[i+k<_map.size()?i+k:_map.size()-1][j+k<_map[0].size()?j+k:_map[0].size()-1].State == _currentPlayer->Id)
+                    if(i+k<_map.size())
                     {
-                        countC ++;
+                        if(_map[i+k][j].State== _currentPlayer->Id)
+                            countA++;
+                        if(countA>= goalAdjacentNumber)
+                            return true;
                     }
-                    if(countC== goalAdjacentNumber)
-                        return true;
-                    if(_map[i<k?0:i-k][j+k<_map[0].size()?j+k:_map[0].size()-1].State == _currentPlayer->Id)
+                    if(j-k>=0&&i+k<_map.size())
                     {
-                        countD ++;
+                        if(_map[i+k][j-k].State== _currentPlayer->Id)
+                        countC++;
+                        if(countC>= goalAdjacentNumber)
+                            return true;
                     }
-                    if(countD== goalAdjacentNumber)
-                        return true;
                 }
 
             }

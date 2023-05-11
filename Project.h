@@ -17,6 +17,8 @@ public:
     void Update();
     void Handle(event ev);
     void ClearScene();
+    void LoadScene(int index);
+    void AddScene(const Scene &scene, bool load=false);
 };
 
 #endif // PROJECT_H_INCLUDED

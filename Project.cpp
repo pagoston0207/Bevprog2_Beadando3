@@ -31,3 +31,16 @@ void Project::ClearScene()
     scenes.push_back(Scene(Layer()));
     currentScene = &scenes[0];
 }
+void Project::LoadScene(int index)
+{
+    if(index<scenes.size()&&index>=0)
+    currentScene = &scenes[index];
+}
+void Project::AddScene(const Scene &scene, bool load)
+{
+    scenes.push_back(scene);
+    if(load)
+    {
+        currentScene = &scenes.back();
+    }
+}
