@@ -451,7 +451,7 @@
 	<vector>
 	"Widget.h"
 
-1683831498 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\main.cpp
+1683888850 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\main.cpp
 	"graphics.hpp"
 	"iostream"
 	"TextButton.h"
@@ -463,11 +463,12 @@
 	"fstream"
 	"GameManagerController.h"
 
-1683287255 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\project.h
+1683888984 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\project.h
 	"vector"
 	"Scene.h"
 	"TextButton.h"
 	"Widget.h"
+	"graphics.hpp"
 
 1682594946 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\scene.h
 	<vector>
@@ -479,7 +480,7 @@
 	"ImageButton.h"
 	"Widget.h"
 
-1683287264 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\project.cpp
+1683889005 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\project.cpp
 	"Project.h"
 	"iostream"
 
@@ -524,7 +525,7 @@
 	"Player.h"
 	"Vector2.h"
 
-1683268670 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.cpp
+1683831937 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.cpp
 	"GameManagerController.h"
 	"iostream"
 

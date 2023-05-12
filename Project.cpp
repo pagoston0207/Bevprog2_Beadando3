@@ -4,10 +4,25 @@ Project::Project()
 {
 
 }
-Project::Project(const Scene &baseScene)
+Project::Project(const Scene &baseScene, Vector2 screenSize):_screenSize(screenSize)
 {
     scenes.push_back(baseScene);
     currentScene= &scenes.back();
+    gout.open(_screenSize.x,_screenSize.y);
+}
+void Project::Start(int timeInterval)
+{
+    gin.timer(timeInterval);
+    while(gin >> ev&& ev.keycode!= key_escape)
+    {
+            Handle(ev);
+            if(ev.type==ev_timer)
+            {
+                gout<<move_to(0,0)<<color(0,0,0)<<box(_screenSize.x,_screenSize.y);
+                Update();
+                gout<<refresh;
+            }
+    }
 }
 void Project::Add( Widget* _widget)
 {
