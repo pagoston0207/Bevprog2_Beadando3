@@ -7,7 +7,7 @@ GameManager::GameManager()
     currentPlayer =0;
     _player1.Id=1;
     _player2.Id=2;
-    goalAdjacentNumber =3;
+    goalAdjacentNumber =5;
 }
 GameManager::GameManager(std::function<void(GameManager* sender)> endOfGameCallback, Vector2 mapSize):_endOfGameCallback(endOfGameCallback)
 {
@@ -23,7 +23,7 @@ GameManager::GameManager(std::function<void(GameManager* sender)> endOfGameCallb
     _player1.Id=1;
     _player2.Id=2;
     currentPlayer = 0;
-    goalAdjacentNumber =3;
+    goalAdjacentNumber =5;
 }
 bool GameManager::CanPlace(Vector2 cellPos)
 {
@@ -126,6 +126,22 @@ bool GameManager::IsEndOfGame()
 
             }
         }
+
     }
-    return false;
+    return GetFieldCount(Empty)==0;
+}
+int GameManager::GetFieldCount(FieldState state)
+{
+    int count=0;
+    for(vector<Field> v:_map)
+    {
+        for(Field f: v)
+        {
+            if(f.State==state)
+            {
+                count++;
+            }
+        }
+    }
+    return count;
 }

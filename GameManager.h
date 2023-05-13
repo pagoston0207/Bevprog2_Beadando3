@@ -27,6 +27,7 @@ public:
     void Place(Vector2 cellPos);
     FieldState GetState(Vector2 cellPos);
     Vector2 GetSize();
+    int GetFieldCount(FieldState state);
 
 };
 

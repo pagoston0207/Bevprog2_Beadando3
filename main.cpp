@@ -28,7 +28,7 @@ int main()
     TextButton restartButton([&restartButton,&GMC, &p,&gameOver,&winnerText](TextButton* sender)
         {
             delete GMC;
-            GMC=  new GameManagerController(Vector2(15,15),Vector2(XX,YY),[XX,YY, &gameOver,&p,&restartButton, &GMC,&winnerText](GameManager* sender){gameOver = true;restartButton.SetActive(true);winnerText.SetActive(true);winnerText.SetText("The winner is:"+GMC->GetCurrentPlayerSymbol());GMC->SetActive(false);p.Update();},"X.bmp.kep","O.bmp.kep");
+            GMC=  new GameManagerController(Vector2(15,15),Vector2(XX,YY),[XX,YY, &gameOver,&p,&restartButton, &GMC,&winnerText](GameManager* sender){gameOver = true;restartButton.SetActive(true);winnerText.SetActive(true);sender->GetFieldCount(Empty)==0?winnerText.SetText("Draw:The field is full"):winnerText.SetText("The winner is:"+GMC->GetCurrentPlayerSymbol());GMC->SetActive(false);p.Update();},"X.bmp.kep","O.bmp.kep");
             restartButton.SetActive(false);
             p.Update();
             gameOver = false;
@@ -36,7 +36,7 @@ int main()
     restartButton.SetActive(false);
     restartButton.MoveTo(Vector2(XX/2,YY/2));
 
-    GMC = new GameManagerController(Vector2(15,15),Vector2(XX,YY),[XX,YY, &gameOver,&p,&restartButton, &GMC,&winnerText](GameManager* sender){gameOver = true;restartButton.SetActive(true);winnerText.SetActive(true);winnerText.SetText("The winner is:"+GMC->GetCurrentPlayerSymbol());GMC->SetActive(false);p.Update();},"X.bmp.kep","O.bmp.kep");
+    GMC = new GameManagerController(Vector2(15,15),Vector2(XX,YY),[XX,YY, &gameOver,&p,&restartButton, &GMC,&winnerText](GameManager* sender){gameOver = true;restartButton.SetActive(true);winnerText.SetActive(true);sender->GetFieldCount(Empty)==0?winnerText.SetText("Draw:The field is full"):winnerText.SetText("The winner is:"+GMC->GetCurrentPlayerSymbol());GMC->SetActive(false);p.Update();},"X.bmp.kep","O.bmp.kep");
     p.Add(GMC);
     p.Add(&restartButton);
 
