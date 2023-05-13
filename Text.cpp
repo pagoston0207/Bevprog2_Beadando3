@@ -19,10 +19,6 @@ void Text::SetText(string newText)
     value= newText;
     InitializeSprite();
 }
-void Text::SetColor(Color _textColor)
-{
-    InitializeSprite();
-}
 string Text::GetValue()
 {
     return value;

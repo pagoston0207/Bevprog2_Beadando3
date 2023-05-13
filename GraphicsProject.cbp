@@ -45,6 +45,12 @@
 			<Add library="dxguid" />
 			<Add directory="lib" />
 		</Linker>
+		<Unit filename="../DeepLearning/TicTacToeAI/NeuralLayer.cpp" />
+		<Unit filename="../DeepLearning/TicTacToeAI/NeuralLayer.h" />
+		<Unit filename="../DeepLearning/TicTacToeAI/NeuralNetwork.cpp" />
+		<Unit filename="../DeepLearning/TicTacToeAI/NeuralNetwork.h" />
+		<Unit filename="../DeepLearning/TicTacToeAI/Neuron.cpp" />
+		<Unit filename="../DeepLearning/TicTacToeAI/Neuron.h" />
 		<Unit filename="CountingWidget.cpp" />
 		<Unit filename="CountingWidget.h" />
 		<Unit filename="Field.cpp" />
@@ -59,6 +65,8 @@
 		<Unit filename="ImageButton.h" />
 		<Unit filename="Layer.cpp" />
 		<Unit filename="Layer.h" />
+		<Unit filename="MachinePlayer.cpp" />
+		<Unit filename="MachinePlayer.h" />
 		<Unit filename="Player.cpp" />
 		<Unit filename="Player.h" />
 		<Unit filename="Project.cpp" />

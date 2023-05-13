@@ -24,12 +24,11 @@
 	"FilledText.h"
 	"functional"
 
-1682594625 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\filledtext.h
+1683993500 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\filledtext.h
 	"Text.h"
 
-1682594750 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\text.h
+1683993489 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\text.h
 	"Sprite.h"
-	"Color.h"
 
 1683193564 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\sprite.h
 	"graphics.hpp"
@@ -451,7 +450,7 @@
 	<vector>
 	"Widget.h"
 
-1683889408 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\main.cpp
+1684003340 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\main.cpp
 	"iostream"
 	"TextButton.h"
 	"Project.h"
@@ -497,7 +496,7 @@
 	<iostream>
 	<fstream>
 
-1682595284 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\text.cpp
+1683993489 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\text.cpp
 	"Text.h"
 	"graphics.hpp"
 
@@ -513,22 +512,23 @@
 	"Widget.h"
 	<iostream>
 
-1683989055 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.cpp
+1684004427 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.cpp
 	"GameManager.h"
 	"iostream"
 
-1683989071 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.h
+1684003148 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.h
 	"Field.h"
 	"vector"
 	"functional"
 	"Player.h"
 	"Vector2.h"
+	"MachinePlayer.h"
 
-1683831937 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.cpp
+1684000093 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.cpp
 	"GameManagerController.h"
 	"iostream"
 
-1683831589 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.h
+1684000064 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.h
 	"ImageButton.h"
 	"GameManager.h"
 	"functional"
@@ -543,4 +543,51 @@
 
 1683133900 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\player.cpp
 	"Player.h"
+
+1683801031 source:c:\users\agoston\desktop\egyetem\bevprog2\deeplearning\tictactoeai\layer.cpp
+	"Layer.h"
+	"iostream"
+
+1683747872 c:\users\agoston\desktop\egyetem\bevprog2\deeplearning\tictactoeai\layer.h
+	"Neuron.h"
+	"vector"
+	"functional"
+
+1683994859 c:\users\agoston\desktop\egyetem\bevprog2\deeplearning\tictactoeai\neuron.h
+	"vector"
+	"NeuralLayer.h"
+	"functional"
+
+1684005263 source:c:\users\agoston\desktop\egyetem\bevprog2\deeplearning\tictactoeai\neuralnetwork.cpp
+	"NeuralNetwork.h"
+	"iostream"
+	"cmath"
+	"fstream"
+
+1684004427 c:\users\agoston\desktop\egyetem\bevprog2\deeplearning\tictactoeai\neuralnetwork.h
+	"vector"
+	"functional"
+	"C:\Users\Agoston\Desktop\Egyetem\Bevprog2\DeepLearning\TicTacToeAI\NeuralLayer.h"
+	"cmath"
+	<string>
+
+1683994859 source:c:\users\agoston\desktop\egyetem\bevprog2\deeplearning\tictactoeai\neuron.cpp
+	"Neuron.h"
+	"iostream"
+
+1683996868 c:\users\agoston\desktop\egyetem\bevprog2\deeplearning\tictactoeai\neurallayer.h
+	"Neuron.h"
+	"vector"
+	"functional"
+
+1683994859 source:c:\users\agoston\desktop\egyetem\bevprog2\deeplearning\tictactoeai\neurallayer.cpp
+	"NeuralLayer.h"
+	"iostream"
+
+1683999411 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\machineplayer.h
+	"../DeepLearning/TicTacToeAI/NeuralNetwork.h"
+	"Player.h"
+
+1683999383 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\machineplayer.cpp
+	"MachinePlayer.h"
 

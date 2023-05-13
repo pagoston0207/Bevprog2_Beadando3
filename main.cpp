@@ -17,6 +17,7 @@ int main()
     bool gameOver=false;
     Project p= Project(Scene(Layer()), Vector2(750,750));
     p.AddScene(Scene(Layer()),true);
+    bool machinePlayerEnabled=false;
 
     GameManagerController* GMC;
 
@@ -25,10 +26,10 @@ int main()
     winnerText.SetActive(false);
     p.Add(&winnerText);
 
-    TextButton restartButton([&restartButton,&GMC, &p,&gameOver,&winnerText](TextButton* sender)
+    TextButton restartButton([&restartButton,&GMC, &p,&gameOver,&winnerText, &machinePlayerEnabled](TextButton* sender)
         {
             delete GMC;
-            GMC=  new GameManagerController(Vector2(15,15),Vector2(XX,YY),[XX,YY, &gameOver,&p,&restartButton, &GMC,&winnerText](GameManager* sender){gameOver = true;restartButton.SetActive(true);winnerText.SetActive(true);sender->GetFieldCount(Empty)==0?winnerText.SetText("Draw:The field is full"):winnerText.SetText("The winner is:"+GMC->GetCurrentPlayerSymbol());GMC->SetActive(false);p.Update();},"X.bmp.kep","O.bmp.kep");
+            GMC=  new GameManagerController(Vector2(15,15),Vector2(XX,YY),[XX,YY, &gameOver,&p,&restartButton, &GMC,&winnerText](GameManager* sender){gameOver = true;restartButton.SetActive(true);winnerText.SetActive(true);sender->GetFieldCount(Empty)==0?winnerText.SetText("Draw:The field is full"):winnerText.SetText("The winner is:"+GMC->GetCurrentPlayerSymbol());GMC->SetActive(false);p.Update();},"X.bmp.kep","O.bmp.kep","NeuralNetwork.txt");
             restartButton.SetActive(false);
             p.Update();
             gameOver = false;
@@ -36,7 +37,8 @@ int main()
     restartButton.SetActive(false);
     restartButton.MoveTo(Vector2(XX/2,YY/2));
 
-    GMC = new GameManagerController(Vector2(15,15),Vector2(XX,YY),[XX,YY, &gameOver,&p,&restartButton, &GMC,&winnerText](GameManager* sender){gameOver = true;restartButton.SetActive(true);winnerText.SetActive(true);sender->GetFieldCount(Empty)==0?winnerText.SetText("Draw:The field is full"):winnerText.SetText("The winner is:"+GMC->GetCurrentPlayerSymbol());GMC->SetActive(false);p.Update();},"X.bmp.kep","O.bmp.kep");
+    GMC = new GameManagerController(Vector2(15,15),Vector2(XX,YY),[XX,YY, &gameOver,&p,&restartButton, &GMC,&winnerText,&machinePlayerEnabled](GameManager* sender){gameOver = true;restartButton.SetActive(true);winnerText.SetActive(true);sender->GetFieldCount(Empty)==0?winnerText.SetText("Draw:The field is full"):winnerText.SetText("The winner is:"+GMC->GetCurrentPlayerSymbol());GMC->SetActive(false);p.Update();},"X.bmp.kep","O.bmp.kep","NeuralNetwork.txt");
+    GMC->EnableMachinePlayer(false);
     p.Add(GMC);
     p.Add(&restartButton);
 
@@ -45,6 +47,12 @@ int main()
     TextButton startButton([&p](TextButton* sender){p.LoadScene(1);},"Start", Vector2(200,75));
     startButton.MoveTo(Vector2(XX/2,YY/2));
     p.Add(&startButton);
+
+    TextButton machinePlayerButton([&machinePlayerEnabled,&GMC](TextButton* sender){if(machinePlayerEnabled){GMC->EnableMachinePlayer(false);machinePlayerEnabled=false; sender->SetText("Machine Player: Off");}else{ GMC->EnableMachinePlayer(true); machinePlayerEnabled=true; sender->SetText("Machine Player: On");}},"Machine Player: Off",Vector2(200,75));
+    machinePlayerButton.MoveTo(Vector2(XX/2, YY/2-250));
+    p.Add(&machinePlayerButton);
+
+
     p.Update();
 
 

@@ -9,7 +9,7 @@ GameManager::GameManager()
     _player2.Id=2;
     goalAdjacentNumber =5;
 }
-GameManager::GameManager(std::function<void(GameManager* sender)> endOfGameCallback, Vector2 mapSize):_endOfGameCallback(endOfGameCallback)
+GameManager::GameManager(std::function<void(GameManager* sender)> endOfGameCallback, Vector2 mapSize,string machinePlayerPath):_endOfGameCallback(endOfGameCallback)
 {
     for(int i = 0; i <mapSize.x;i++)
     {
@@ -20,6 +20,15 @@ GameManager::GameManager(std::function<void(GameManager* sender)> endOfGameCallb
         }
         _map.push_back(v);
     }
+    if(machinePlayerPath!="")
+    {
+        machinePlayer = MachinePlayer();
+        machinePlayer.Load(machinePlayerPath);
+    }
+    else
+    {
+        _machinePlayerEnabled = false;
+    }
     _player1.Id=1;
     _player2.Id=2;
     currentPlayer = 0;
@@ -27,6 +36,10 @@ GameManager::GameManager(std::function<void(GameManager* sender)> endOfGameCallb
 }
 bool GameManager::CanPlace(Vector2 cellPos)
 {
+    if(cellPos.x<0||cellPos.y<0||cellPos.x>_map.size()-1||cellPos.y>_map[0].size()-1)
+    {
+        return false;
+    }
     return _map[cellPos.x][cellPos.y].State==Empty;
 }
 Vector2 GameManager::GetSize()
@@ -41,10 +54,38 @@ void GameManager::Place(Vector2 cellPos)
         {
             _map[cellPos.x][cellPos.y].State= Player1;
         }
-        else
+        else if(currentPlayer->Id==Player2)
         {
             _map[cellPos.x][cellPos.y].State= Player2;
         }
+
+        if(IsEndOfGame())
+        {
+            _endOfGameCallback(this);
+        }
+        else
+        {
+            NextTurn();
+            if(_machinePlayerEnabled&&currentPlayer->Id != machinePlayer.Id)
+            {
+                MachineStep();
+            }
+
+        }
+    }
+
+}
+void GameManager::MachineStep()
+{
+    vector<double> step = machinePlayer.Run(GetState(false));
+    if(CanPlace(Vector2(step[0],step[1])))
+    {
+        if(*currentPlayer == _player2)
+        {
+
+            _map[(int)step[0]][(int)step[1]].State = Player2;
+        }
+
         if(IsEndOfGame())
         {
             _endOfGameCallback(this);
@@ -54,7 +95,11 @@ void GameManager::Place(Vector2 cellPos)
             NextTurn();
         }
     }
-
+    else
+    {
+        NextTurn();
+        _endOfGameCallback(this);
+    }
 }
 void GameManager::NextTurn()
 {
@@ -145,3 +190,38 @@ int GameManager::GetFieldCount(FieldState state)
     }
     return count;
 }
+void GameManager::EnableMachinePlayer(bool enable)
+{
+    _machinePlayerEnabled=enable;
+}
+vector<double> GameManager::GetState(bool invert)
+{
+    vector<double> res;
+    for(int i =0; i<_map.size();i++)
+    {
+        for(int j=0;j<_map[0].size();j++)
+        {
+            if(_map[i][j].State == Player1)
+            {
+                res.push_back(1);
+            }
+            else if(_map[i][j].State== Player2)
+            {
+                res.push_back(-1);
+            }
+            else
+            {
+                res.push_back(0);
+            }
+        }
+    }
+    if(invert)
+    {
+        for(double & d: res)
+        {
+            d*=-1;
+        }
+    }
+    return res;
+}
+
