@@ -9,7 +9,6 @@ protected:
 public:
     FilledText();
     FilledText(string value, Vector2 _size=Vector2(10,10),Widget* _parent=0);
-    void SetFillColor(Color _fillColor);
 };
 
 

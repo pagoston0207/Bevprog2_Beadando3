@@ -24,12 +24,11 @@
 	"FilledText.h"
 	"functional"
 
-1682594625 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\filledtext.h
+1684491784 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\filledtext.h
 	"Text.h"
 
-1682594750 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\text.h
+1684491778 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\text.h
 	"Sprite.h"
-	"Color.h"
 
 1683193564 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\sprite.h
 	"graphics.hpp"
@@ -451,7 +450,7 @@
 	<vector>
 	"Widget.h"
 
-1683889408 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\main.cpp
+1684491733 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\main.cpp
 	"iostream"
 	"TextButton.h"
 	"Project.h"
@@ -497,7 +496,7 @@
 	<iostream>
 	<fstream>
 
-1682595284 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\text.cpp
+1684491733 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\text.cpp
 	"Text.h"
 	"graphics.hpp"
 
@@ -513,22 +512,22 @@
 	"Widget.h"
 	<iostream>
 
-1683989055 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.cpp
+1684491733 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.cpp
 	"GameManager.h"
 	"iostream"
 
-1683989071 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.h
+1684491733 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.h
 	"Field.h"
 	"vector"
 	"functional"
 	"Player.h"
 	"Vector2.h"
 
-1683831937 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.cpp
+1684491733 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.cpp
 	"GameManagerController.h"
 	"iostream"
 
-1683831589 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.h
+1684491733 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.h
 	"ImageButton.h"
 	"GameManager.h"
 	"functional"
