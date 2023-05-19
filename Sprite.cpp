@@ -1,5 +1,4 @@
 #include "Sprite.h"
-#include "graphics.hpp"
 #include <iostream>
 #include <fstream>
 using genv::gout;
@@ -11,7 +10,6 @@ using genv::box;
 using std::ifstream;
 using std::cerr;
 using std::endl;
-using std::cout;
 Sprite::Sprite( Vector2 _size, Widget* _parent,string _graphicFileName):  Widget(_size,_parent), graphicFileName(_graphicFileName)
 {
     InitializeSprite();
@@ -75,7 +73,6 @@ void Sprite::InitializeSprite()
     }
     else
     {
-        //int r = rand()%75+125;
         int r =125;
         _canvas<<move_to(0,0)<<color(r,r,r)<<box(size.x,size.y);
         _canvas<<move_to(size.x*0.1,size.y*0.1)<<color(255,255,255)<<box(size.x*0.8,size.y*0.8);

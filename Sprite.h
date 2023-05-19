@@ -1,6 +1,5 @@
 #ifndef SPRITE_H_INCLUDED
 #define SPRITE_H_INCLUDED
-#include "graphics.hpp"
 #include "Widget.h"
 using genv::canvas;
 using std::string;

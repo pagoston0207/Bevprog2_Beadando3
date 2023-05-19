@@ -1,11 +1,8 @@
 #include "SelectingWidget.h"
-#include <iostream>
 using genv::btn_wheelup;
 using genv::btn_wheeldown;
 using genv::key_up;
 using genv::key_down;
-using std::cerr;
-using std::endl;
 SelectingWidget::SelectingWidget(vector<string> initialValues,Vector2 _elementSize, int _maxItemsDisplayed):elementSize(_elementSize),maxItemsDisplayed(_maxItemsDisplayed)
 {
     values= initialValues;
@@ -48,10 +45,6 @@ void SelectingWidget::displayList()
             _list[i].MoveTo(Vector2(-elementSize.x/2,(i-start)*elementSize.y));
         }
         listOpen=true;
-    }
-    else
-    {
-        cerr<<"Index out of range exception"<<endl;
     }
 }
 void SelectingWidget::switchState()

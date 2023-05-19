@@ -1,7 +1,4 @@
 #include "GameManager.h"
-#include "iostream"
-using std::cout;
-using std::endl;
 GameManager::GameManager()
 {
     currentPlayer =0;

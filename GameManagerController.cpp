@@ -1,7 +1,4 @@
 #include "GameManagerController.h"
-#include "iostream"
-using std::cout;
-using std::endl;
 GameManagerController ::GameManagerController( Vector2 mapSize,Vector2 screenSize, std::function<void(GameManager* sender)> endOfGameCallback, string xGraphicPath, string oGraphicPath): _xGraphicPath(xGraphicPath), _oGraphicPath(oGraphicPath)
 {
     _gameManager = GameManager(endOfGameCallback,mapSize);

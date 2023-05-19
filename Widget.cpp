@@ -1,5 +1,4 @@
 #include "Widget.h"
-#include <iostream>
 using genv::event;
 
 Widget::Widget(Vector2 _size,Widget* _parent)

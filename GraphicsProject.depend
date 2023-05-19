@@ -1,15 +1,14 @@
 # depslib dependency file v1.0
-1682595665 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\countingwidget.cpp
+1684492658 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\countingwidget.cpp
 	"CountingWidget.h"
 	"TextButton.h"
-	"iostream"
 
 1682534157 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\countingwidget.h
 	"Widget.h"
 	"TextButton.h"
 	"FilledText.h"
 
-1682595607 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\widget.h
+1684497707 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\widget.h
 	"Vector2.h"
 	<vector>
 	"graphics.hpp"
@@ -30,16 +29,13 @@
 1684491778 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\text.h
 	"Sprite.h"
 
-1683193564 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\sprite.h
-	"graphics.hpp"
+1684497620 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\sprite.h
 	"Widget.h"
 
 1681978818 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\color.h
 
-1682595398 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\filledtext.cpp
+1684492737 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\filledtext.cpp
 	"FilledText.h"
-	<iostream>
-	"graphics.hpp"
 
 1677893378 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\graphicslib\graphics.cpp
 	"graphics.hpp"
@@ -441,32 +437,27 @@
 	"Sprite.h"
 	"functional"
 
-1683217533 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\layer.cpp
+1684493143 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\layer.cpp
 	"Layer.h"
-	"iostream"
-	"graphics.hpp"
 
 1682595118 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\layer.h
 	<vector>
 	"Widget.h"
 
-1684491733 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\main.cpp
-	"iostream"
-	"TextButton.h"
+1684493379 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\main.cpp
 	"Project.h"
 	"Scene.h"
 	"Layer.h"
+	"TextButton.h"
 	"CountingWidget.h"
 	"SelectingWidget.h"
-	"fstream"
 	"GameManagerController.h"
 
-1683888984 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\project.h
+1684493977 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\project.h
 	"vector"
 	"Scene.h"
 	"TextButton.h"
 	"Widget.h"
-	"graphics.hpp"
 
 1682594946 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\scene.h
 	<vector>
@@ -478,43 +469,35 @@
 	"ImageButton.h"
 	"Widget.h"
 
-1683889005 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\project.cpp
+1684494065 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\project.cpp
 	"Project.h"
-	"iostream"
 
-1683268670 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\scene.cpp
+1684493452 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\scene.cpp
 	"Scene.h"
-	"iostream"
 
-1682595744 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\selectingwidget.cpp
+1684493484 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\selectingwidget.cpp
 	"SelectingWidget.h"
-	<iostream>
 
-1683268670 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\sprite.cpp
+1684493556 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\sprite.cpp
 	"Sprite.h"
-	"graphics.hpp"
 	<iostream>
 	<fstream>
 
-1684491733 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\text.cpp
+1684493575 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\text.cpp
 	"Text.h"
-	"graphics.hpp"
 
-1682594086 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\textbutton.cpp
+1684493618 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\textbutton.cpp
 	"TextButton.h"
-	"iostream"
 
 1683135077 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\vector2.cpp
 	"Vector2.h"
 	<cmath>
 
-1683136891 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\widget.cpp
+1684493646 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\widget.cpp
 	"Widget.h"
-	<iostream>
 
-1684491733 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.cpp
+1684492777 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.cpp
 	"GameManager.h"
-	"iostream"
 
 1684491733 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanager.h
 	"Field.h"
@@ -523,9 +506,8 @@
 	"Player.h"
 	"Vector2.h"
 
-1684491733 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.cpp
+1684492832 source:c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.cpp
 	"GameManagerController.h"
-	"iostream"
 
 1684491733 c:\users\agoston\desktop\egyetem\bevprog2\beadando3\gamemanagercontroller.h
 	"ImageButton.h"

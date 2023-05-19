@@ -1,5 +1,5 @@
-#ifndef OBJECT_H_INCLUDED
-#define OBJECT_H_INCLUDED
+#ifndef WIDGET_H_INCLUDED
+#define WIDGET_H_INCLUDED
 #include "Vector2.h"
 #include <vector>
 #include "graphics.hpp"
@@ -22,4 +22,4 @@ public:
     virtual bool IsOver(Vector2 _pos);
 };
 
-#endif // OBJECT_H_INCLUDED
+#endif // WIDGET_H_INCLUDED

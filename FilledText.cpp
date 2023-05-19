@@ -1,6 +1,4 @@
 #include "FilledText.h"
-#include <iostream>
-#include "graphics.hpp"
 using genv::move_to;
 using genv::color;
 using genv::box;

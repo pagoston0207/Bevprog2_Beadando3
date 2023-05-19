@@ -1,5 +1,4 @@
 #include "Text.h"
-#include "graphics.hpp"
 using genv::gout;
 using genv::move_to;
 using genv::color;

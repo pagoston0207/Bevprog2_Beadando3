@@ -1,11 +1,9 @@
-#include "iostream"
-#include "TextButton.h"
 #include "Project.h"
 #include "Scene.h"
 #include "Layer.h"
+#include "TextButton.h"
 #include "CountingWidget.h"
 #include "SelectingWidget.h"
-#include "fstream"
 #include "GameManagerController.h"
 using namespace genv;
 using namespace std;
@@ -46,7 +44,6 @@ int main()
     startButton.MoveTo(Vector2(XX/2,YY/2));
     p.Add(&startButton);
     p.Update();
-
 
     p.Start(35);
     return 0;

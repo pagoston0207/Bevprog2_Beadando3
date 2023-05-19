@@ -1,10 +1,8 @@
 #include "TextButton.h"
-#include "iostream"
 TextButton::TextButton(function <void(TextButton* sender)> _callbackFunction, string text, Vector2 _size, Widget* _parent):FilledText(text, _size,_parent)
 {
     callbackFunction = _callbackFunction;
 }
-
 TextButton::TextButton()
 {
 
@@ -21,16 +19,7 @@ bool TextButton:: IsOver(Vector2 _pos)
         }
     }
     return(GetWorldPos().x+size.x/2>_pos.x&&GetWorldPos().x-size.x/2<_pos.x&&GetWorldPos().y+size.y/2>_pos.y&&GetWorldPos().y-size.y/2<_pos.y);
-
 }
-/*void TextButton::Print()
-{
-    for(Widget* &c:children)
-    {
-        c->Print();
-    }
-    gout<<stamp(_canvas,GetWorldPos().x-size.x/2,GetWorldPos().y-size.y/2);
-}*/
 void TextButton::Handle(event ev)
 {
     Widget::Handle(ev);

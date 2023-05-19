@@ -1,5 +1,13 @@
 #include "Project.h"
-#include "iostream"
+using genv::gout;
+using genv::gin;
+using genv::event;
+using genv::key_escape;
+using genv::ev_timer;
+using genv::move_to;
+using genv::color;
+using genv::box;
+using genv::refresh;
 Project::Project()
 {
 

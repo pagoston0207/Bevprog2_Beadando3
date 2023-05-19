@@ -4,8 +4,6 @@
 #include"Scene.h"
 #include"TextButton.h"
 #include "Widget.h"
-#include "graphics.hpp"
-using namespace genv;
 
 class Project
 {

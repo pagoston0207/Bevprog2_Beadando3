@@ -1,10 +1,6 @@
 #include "Layer.h"
-#include "iostream"
-#include "graphics.hpp"
 using genv::event;
 using genv::ev_mouse;
-using std::cerr;
-using std::endl;
 Layer::Layer()
 {
 
@@ -23,19 +19,13 @@ void Layer::Print()
 }
 void Layer::Handle(event ev)
 {
-
     for(Widget* &o : roots)
     {
         if(o)
         {
             o->Handle(ev);
         }
-        else
-        {
-            cerr<<"Nullpointer Widget"<<endl;
-        }
     }
-
 }
 Widget* Layer::GetHovered(Vector2 _pos)
 {

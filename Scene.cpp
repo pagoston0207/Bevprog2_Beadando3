@@ -1,13 +1,9 @@
 #include "Scene.h"
-#include "iostream"
 using genv::ev_mouse;
-using std::cout;
-using std::endl;
 
 Scene::Scene()
 {
     selected=0;
-
 }
 Scene::Scene(const Layer &baseLayer)
 {
@@ -19,8 +15,6 @@ void Scene::Add( Widget* _widget)
     widgets.push_back(*_widget);
     layers[layers.size()-1].Add(_widget);
 }
-
-
 void Scene::Print()
 {
     for(Layer &l : layers)
